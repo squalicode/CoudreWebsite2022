@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    min-height: 90vh;
+    margin: 5vh 6vw;
+
+    font-family: sans-serif;
+    line-height: 2em;
+}
+
+h1 {
+    margin: 0 0 1rem 0;
+}
+
+nav li {
+    display: inline;
+}
+
+header,
+article,
+section {
+    margin: 0 0 3rem 0;
+}
+
+h2,
+h3,
+iframe,
+img {
+    margin: 0.5em 0;
+}
+
+ul {
+    list-style: none;
+}
+
+main ul,
+main > p,
+section > p {
+    margin: 0 0 2em 0;
+}
+
+img,
+iframe {
+    max-width: 100%;
+}
+
+footer a,
+nav li {
+    margin: 0 1em 0 0;
+}
