@@ -12,7 +12,6 @@ body {
     margin: 5vh 6vw;
 
     font-family: sans-serif;
-    line-height: 2em;
 }
 
 h1 {
@@ -21,12 +20,17 @@ h1 {
 
 nav li {
     display: inline;
+    margin: 0 1em 0 0;
 }
 
 header,
 article,
 section {
     margin: 0 0 3rem 0;
+}
+
+main {
+    line-height: 2em;
 }
 
 h2,
@@ -51,7 +55,21 @@ iframe {
     max-width: 100%;
 }
 
-footer a,
-nav li {
-    margin: 0 1em 0 0;
+footer small > a {
+    margin: 0 0.7em 0.7em 0;
+    display: inline-block;
+}
+
+
+@media (min-width: 30rem) {
+    header {
+        display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    }
+
+    nav ul {
+        margin: 0 0 1rem 0;
+    }
 }
