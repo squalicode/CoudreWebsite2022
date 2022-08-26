@@ -5,12 +5,7 @@
 }
 
 body {
-    display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    min-height: 90vh;
     margin: 5vh 6vw;
-
     font-family: sans-serif;
 }
 
@@ -46,13 +41,24 @@ ul {
 
 main ul,
 main > p,
+div > p,
 section > p {
     margin: 0 0 2em 0;
 }
 
 img,
 iframe {
-    max-width: 100%;
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+article > img {
+    height: 15rem;
+}
+
+footer {
+    margin: 2rem 0 0 0;
 }
 
 footer small > a {
@@ -60,16 +66,50 @@ footer small > a {
     display: inline-block;
 }
 
-
-@media (min-width: 30rem) {
-    header {
-        display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-    }
+@media (min-width: 45rem) {
+    
 
     nav ul {
         margin: 0 0 1rem 0;
+    }
+
+    header,
+    .flex{
+        display: flex;
+            flex-direction: row;
+    }
+
+    header {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .flex > div:first-child {
+        max-width: 45vw;
+        margin-right: 4rem;
+    }
+
+    .home {
+        min-height: 60vh;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .home img {
+        max-height: 60vh;
+        max-width: 35vw;
+    }
+
+    .projectsWrap,
+    .aboutWrap {
+        display: grid;
+        gap: 0.5rem 6rem;
+        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    }
+
+    article,
+    section {
+        /* Just in case browser doesn't support grid */
+        max-width: 40vw;
     }
 }
