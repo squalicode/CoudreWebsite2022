@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scrollbar-gutter: stable;
+}
+
 .btnLink {
     border: 0.1rem solid;
     padding: 0.2em 0.8em;
