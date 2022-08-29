@@ -118,13 +118,13 @@ footer small > a {
         margin: 0 0 1rem 0;
     }
 
-    header,
+    .navHeader,
     .flex{
         display: flex;
             flex-direction: row;
     }
 
-    header {
+    .navHeader {
         justify-content: space-between;
         align-items: center;
     }
