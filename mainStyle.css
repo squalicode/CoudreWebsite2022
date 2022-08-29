@@ -6,14 +6,34 @@
 
 .btnLink {
     border: 0.1rem solid;
-    text-decoration: none;
     padding: 0.2em 0.8em;
     display: inline-block;
     margin: 0.8em 0 1.8em 0;
 }
 
-header nav,
+a {
+    font-weight: bold;
+}
+
+h1 a {
+    color: inherit;
+}
+
+h2 a,
 header a,
+.btnLink {
+    text-decoration: none;
+}
+
+header > a {
+    display: inline-block;
+    margin-top: 1em;
+}
+
+
+
+header nav,
+header > a,
 .btnLink,
 footer > a {
     user-select: none;
@@ -30,7 +50,7 @@ h1 {
 
 nav li {
     display: inline;
-    margin-right: 1em;
+    margin-right: 2em;
 }
 
 header,
@@ -148,15 +168,19 @@ svg {
         margin: 0 0 1rem 0;
     }
 
-    .navHeader,
+    header,
     .flex{
         display: flex;
             flex-direction: row;
     }
 
-    .navHeader {
+    header {
         justify-content: space-between;
         align-items: center;
+    }
+
+    header li {
+        margin: 0 0 0 3em;
     }
 
     .flex > div:first-child {
