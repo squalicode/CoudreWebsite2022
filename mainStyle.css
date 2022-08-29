@@ -24,6 +24,26 @@ section {
     margin: 0 0 3rem 0;
 }
 
+article {
+    /* Necessary to make card links on title stretch to fit the whole card */
+    position: relative;
+    display: flex;
+        flex-direction: column;
+}
+
+article img {
+    order: -1;
+}
+
+article h2 a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 main {
     line-height: 2em;
 }
