@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.btnLink {
+    border: 0.1rem solid;
+    text-decoration: none;
+    padding: 0.5em;
+}
+
 body {
     margin: 5vh 6vw;
     font-family: sans-serif;
