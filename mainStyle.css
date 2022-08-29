@@ -79,6 +79,21 @@ iframe {
     object-fit: cover;
 }
 
+.videoInsert {
+    position: relative;
+    margin-bottom: 4em;
+    padding: 56.21% 0 0 0;
+}
+
+.videoInsert iframe {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height: 100%;
+    border: none;
+}
+
 article > img {
     height: 15rem;
 }
@@ -93,7 +108,11 @@ footer small > a {
 }
 
 @media (min-width: 45rem) {
-    
+
+    .videoInsert {
+        padding: 0;
+        height: 55vh;
+    }
 
     nav ul {
         margin: 0 0 1rem 0;
