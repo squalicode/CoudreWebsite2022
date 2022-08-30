@@ -44,12 +44,6 @@ a:hover,
     outline: 0.3rem solid;
 }
 
-footer svg {
-    width: 2.4em;
-    padding: 0.2em;
-    display: inline-block;
-}
-
 header nav,
 header > a,
 .btnLink,
@@ -100,8 +94,10 @@ main {
     line-height: 2;
 }
 
-h2 {
+h2,
+li h3 {
     margin: 1rem 0;
+    line-height: 1.5;
 }
 
 h3,
@@ -166,8 +162,8 @@ footer > a {
 }
 
 footer svg {
-    width: 2em;
-    margin: 0 0.7em 0.7em 0;
+    width: 2.2em;
+    padding: 0.2em;
     display: inline-block;
 }
 
