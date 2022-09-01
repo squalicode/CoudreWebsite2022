@@ -170,6 +170,7 @@ svg {
 
 a {
     font-weight: bold;
+    text-decoration: none;
 }
 
 a,
@@ -177,15 +178,14 @@ main h2 a {
     color: inherit;
 }
 
-main a {
-    color: var(--accent);
+p a,
+main li a {
+    padding-bottom: 0.1em;
+    border-bottom: 1px solid;
 }
 
-h2 a,
-header a,
-footer > a,
-.btnLink {
-    text-decoration: none;
+main a {
+    color: var(--accent);
 }
 
 
@@ -196,11 +196,17 @@ footer > a,
     color: var(--background);
 }
 
+a,
+:focus {
+    transition: 0.1s;
+}
+
 a:hover,
 a:focus,
 main h2 a:hover,
 main h2 a:focus {
     color: var(--accent);
+
 }
 
 main a:hover,
@@ -208,9 +214,19 @@ main a:focus {
     color: inherit;
 }
 
+p a:hover,
+main li a:hover {
+    border-bottom-width: 4px;
+}
+
 :focus-visible {
     outline: 0.3rem solid;
     text-decoration: none;
+}
+
+.btnLink:hover,
+.btnLink:focus {
+    outline-width: 4px;
 }
 
 header nav,
@@ -230,7 +246,7 @@ time {
 }
 
 .btnLink {
-    border: 1px solid var(--foreground);
+    outline: 1px solid var(--foreground);
     padding: 0.2em 0.8em;
     display: inline-block;
     margin: 0.8em 0 1.8em 0;
