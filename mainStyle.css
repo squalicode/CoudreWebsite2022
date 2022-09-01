@@ -19,6 +19,7 @@ CONTENTS
 :root {
     --background: #f3f1f0;
     --foreground: #474747;
+    --borders: #ada5a5;
     --accent: #d12f00;
 }
 
@@ -55,6 +56,10 @@ img {
 header,
 .videoInsert {
     margin-bottom: 3rem;
+}
+
+header {
+    border-bottom: 1px solid var(--borders);
 }
 
 /* "Go back" button in project pages */
@@ -97,6 +102,8 @@ article img {
 
 footer {
     margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--borders);
 }
 
 footer svg {
@@ -112,13 +119,13 @@ main {
     line-height: 2;
 }
 
-h1,
-header > a {
-    margin-bottom: 1.2rem;
+header {
+    padding-bottom: 1.2rem;
 }
 
 h1 {
     font-size: 3em;
+    margin-bottom: 1rem;
 }
 
 h3 {
@@ -216,8 +223,14 @@ footer > a {
 
 /*//////////////////////////////// COMPONENTS ////////////////////////////////*/
 
+time {
+    display: block;
+    border-bottom: 1px solid var(--borders);
+    margin-bottom: 1em;
+}
+
 .btnLink {
-    border: 0.1rem solid var(--foreground);
+    border: 1px solid var(--foreground);
     padding: 0.2em 0.8em;
     display: inline-block;
     margin: 0.8em 0 1.8em 0;
@@ -255,15 +268,12 @@ footer > a {
 
     header {
         justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
+        height: 10vh;
     }
 
     header li {
         margin: 0 0 0 3em;
-    }
-
-    nav ul {
-        margin: 0 0 1rem 0;
     }
 
     .flex > div:first-child {
@@ -272,7 +282,7 @@ footer > a {
     }
 
     .home {
-        min-height: 57vh;
+        min-height: 53vh;
         align-items: center;
         justify-content: space-between;
     }
@@ -294,13 +304,13 @@ footer > a {
     .projectsWrap,
     .aboutWrap {
         display: grid;
-        gap: 0 6rem;
-        grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+        gap: 1rem 6rem;
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
     }
 
     article,
     section {
         /* Just in case browser doesn't support grid */
-        max-width: 40vw;
+        max-width: 55vw;
     }
 }
