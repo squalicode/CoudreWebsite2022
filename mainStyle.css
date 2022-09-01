@@ -183,14 +183,14 @@ footer > a,
 }
 
 a:hover,
-a:focus-visible,
+a:focus,
 main h2 a:hover,
-main h2 a:focus-visible{
+main h2 a:focus {
     color: var(--accent);
 }
 
 main a:hover,
-main a:focus-visible {
+main a:focus {
     color: inherit;
 }
 
