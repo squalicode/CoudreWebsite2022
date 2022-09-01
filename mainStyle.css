@@ -18,7 +18,7 @@ CONTENTS
 
 :root {
     --background: #f3f1f0;
-    --foreground: #474747;
+    --foreground: #404047;
     --borders: #ada5a5;
     --accent: #d12f00;
 }
@@ -95,7 +95,7 @@ article h2 a::after {
 
 article img {
     order: -1;
-    height: 15rem;
+    height: 18rem;
 }
 
 /************ footer ************/
