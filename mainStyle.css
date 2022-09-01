@@ -16,6 +16,12 @@ CONTENTS
 
 /*////////////////////////////////// GLOBAL /////////////////////////////////*/
 
+:root {
+    --background: #f3f1f0;
+    --foreground: #474747;
+    --accent: #d12f00;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -23,6 +29,9 @@ CONTENTS
 }
 
 html {
+    background-color: var(--background);
+    color: var(--foreground);
+
     scrollbar-gutter: stable;
 }
 
@@ -94,10 +103,6 @@ footer {
     margin-top: 3rem;
 }
 
-footer > a {
-    text-decoration: none;
-}
-
 footer svg {
     width: 2.2em;
     padding: 0.2em;
@@ -149,25 +154,43 @@ svg {
 
 /************ links ************/
 
-h2 a,
-header a,
-.btnLink {
-    text-decoration: none;
-}
-
 a {
     font-weight: bold;
 }
 
-h1 a {
+a,
+main h2 a {
     color: inherit;
+}
+
+main a {
+    color: var(--accent);
+}
+
+h2 a,
+header a,
+footer > a,
+.btnLink {
+    text-decoration: none;
 }
 
 
 /*/////////////////////////////// INTERACTION ///////////////////////////////*/
 
+::selection {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
 a:hover,
-:focus-visible {
+a:focus-visible,
+main h2 a:hover,
+main h2 a:focus-visible{
+    color: var(--accent);
+}
+
+main a:hover,
+main a:focus-visible {
     color: inherit;
 }
 
@@ -187,7 +210,7 @@ footer > a {
 /*//////////////////////////////// COMPONENTS ////////////////////////////////*/
 
 .btnLink {
-    border: 0.1rem solid;
+    border: 0.1rem solid var(--foreground);
     padding: 0.2em 0.8em;
     display: inline-block;
     margin: 0.8em 0 1.8em 0;
