@@ -1,3 +1,21 @@
+/*
+CONTENTS
+
+1. global
+2. layout
+    2.1 header, nav
+    2.2 articles (project gallery)
+    2.3 footer
+3. text
+    3.1 links
+4. interaction
+5. components
+6. desktop media query
+*/
+
+
+/*////////////////////////////////// GLOBAL /////////////////////////////////*/
+
 * {
     margin: 0;
     padding: 0;
@@ -8,56 +26,36 @@ html {
     scrollbar-gutter: stable;
 }
 
-.btnLink {
-    border: 0.1rem solid;
-    padding: 0.2em 0.8em;
-    display: inline-block;
-    margin: 0.8em 0 1.8em 0;
-}
-
-a {
-    font-weight: bold;
-}
-
-h1 a {
-    color: inherit;
-}
-
-h2 a,
-header a,
-.btnLink,
-:focus-visible {
-    text-decoration: none;
-}
-
-header > a {
-    display: inline-block;
-    margin-top: 1em;
-}
-
-a:hover,
-:focus-visible {
-    color: inherit;
-}
-
-:focus-visible {
-    outline: 0.3rem solid;
-}
-
-header nav,
-header > a,
-.btnLink,
-footer > a {
-    user-select: none;
-}
-
 body {
     margin: 5vh 6vw;
     font-family: sans-serif;
 }
 
-h1 {
-    margin-bottom: 1.5rem;
+
+/*////////////////////////////////// LAYOUT //////////////////////////////////*/
+
+img,
+iframe {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+img {
+    margin: 1em 0;
+}
+
+/************ header, nav ************/
+
+header,
+.videoInsert {
+    margin-bottom: 3rem;
+}
+
+/* "Go back" button in project pages */
+header > a {
+    display: inline-block;
+    margin-top: 1em;
 }
 
 nav li {
@@ -65,22 +63,17 @@ nav li {
     margin-right: 2em;
 }
 
-header,
-.videoInsert {
-    margin-bottom: 3rem;
-}
+/************ articles (project gallery) ************/
 
 article {
-    /* Necessary to make card links on title stretch to fit the whole card */
-    position: relative;
     display: flex;
         flex-direction: column;
+    /* Necessary to make title links stretch to whole article card */
+    position: relative;
+    margin-bottom: 1.8em;
 }
 
-article img {
-    order: -1;
-}
-
+/* Accessibly stretch title links to whole article card */
 article h2 a::after {
     content: '';
     position: absolute;
@@ -90,68 +83,12 @@ article h2 a::after {
     bottom: 0;
 }
 
-main {
-    line-height: 2;
-}
-
-h2,
-li h3 {
-    margin: 1rem 0;
-    line-height: 1.5;
-}
-
-h3,
-article h2 {
-    margin: 0.2rem 0;
-}
-
-p,
-ul,
-article {
-    margin-bottom: 1.8em;
-}
-
-ul p {
-    margin-bottom: 1.2em;
-}
-
-article p,
-footer p {
-    margin-bottom: 0;
-}
-
-img {
-    margin: 1em 0;
-}
-
-ul {
-    list-style: none;
-}
-
-img,
-iframe {
-    width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-}
-
-.videoInsert {
-    position: relative;
-    padding: 56.21% 0 0 0;
-}
-
-.videoInsert iframe {
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height: 100%;
-    border: none;
-}
-
-article > img {
+article img {
+    order: -1;
     height: 15rem;
 }
+
+/************ footer ************/
 
 footer {
     margin-top: 3rem;
@@ -167,19 +104,117 @@ footer svg {
     display: inline-block;
 }
 
+
+/*/////////////////////////////////// TEXT ///////////////////////////////////*/
+
+main {
+    line-height: 2;
+}
+
+h2,
+h3 {
+    line-height: 1.5;
+}
+
+h3,
+article h2 {
+    margin: 0.2rem 0;
+}
+
+h2 {
+    margin: 1rem 0;
+}
+
+p,
+main ul {
+    margin-bottom: 1.8em;
+}
+
+article p,
+footer p {
+    margin-bottom: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+ul p {
+    margin-bottom: 1.2em;
+}
+
 svg {
     fill: currentColor;
 }
+
+/************ links ************/
+
+h2 a,
+header a,
+.btnLink {
+    text-decoration: none;
+}
+
+a {
+    font-weight: bold;
+}
+
+h1 a {
+    color: inherit;
+}
+
+
+/*/////////////////////////////// INTERACTION ///////////////////////////////*/
+
+a:hover,
+:focus-visible {
+    color: inherit;
+}
+
+:focus-visible {
+    outline: 0.3rem solid;
+    text-decoration: none;
+}
+
+header nav,
+header > a,
+.btnLink,
+footer > a {
+    user-select: none;
+}
+
+
+/*//////////////////////////////// COMPONENTS ////////////////////////////////*/
+
+.btnLink {
+    border: 0.1rem solid;
+    padding: 0.2em 0.8em;
+    display: inline-block;
+    margin: 0.8em 0 1.8em 0;
+}
+
+.videoInsert {
+    position: relative;
+    padding: 56.21% 0 0 0;
+}
+
+.videoInsert iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/*/////////////////////////// DESKTOP MEDIA QUERY ///////////////////////////*/
 
 @media (min-width: 45rem) {
 
     .videoInsert {
         padding: 0;
         height: 55vh;
-    }
-
-    nav ul {
-        margin: 0 0 1rem 0;
     }
 
     header,
@@ -195,6 +230,10 @@ svg {
 
     header li {
         margin: 0 0 0 3em;
+    }
+
+    nav ul {
+        margin: 0 0 1rem 0;
     }
 
     .flex > div:first-child {
