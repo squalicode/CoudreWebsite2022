@@ -49,6 +49,8 @@ img {
     max-height: 100%;
     object-fit: cover;
     margin: 1em 0;
+    background-color: var(--borders);
+    background-image: repeating-linear-gradient(-45deg, #fff9, #fff9 20px, #fff6 20px, #fff6 40px);
 }
 
 /************ header, nav ************/
@@ -285,7 +287,7 @@ time {
     header {
         justify-content: space-between;
         align-items: baseline;
-        height: 10vh;
+        height: 5rem;
     }
 
     header li {
