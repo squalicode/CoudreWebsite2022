@@ -95,9 +95,16 @@ article h2 a::after {
     bottom: 0;
 }
 
-article img {
+article picture {
     order: -1;
+}
+
+article img {
     height: 18rem;
+}
+
+article picture img {
+    margin: 0;
 }
 
 /************ footer ************/
