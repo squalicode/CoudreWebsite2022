@@ -107,6 +107,10 @@ article picture img {
     margin: 0;
 }
 
+#awardList {
+    padding-top: 3em;
+}
+
 /************ footer ************/
 
 footer {
@@ -173,6 +177,10 @@ ul p {
 
 svg {
     fill: currentColor;
+    stroke: currentColor;
+    stroke-width: 0.12em;
+    vertical-align: middle;
+    stroke-linejoin: round;
 }
 
 .caption {
@@ -203,6 +211,11 @@ main li a {
 
 main a {
     color: var(--accent);
+}
+
+.jumpLink {
+    display: inline-block;
+    margin-bottom: 2.5em;
 }
 
 
@@ -335,10 +348,15 @@ time {
     }
 
     .projectsWrap,
-    .aboutWrap {
+    .aboutWrap,
+    #awardList {
         display: grid;
         gap: 1rem 6rem;
         grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+
+    #awardList {
+        min-width: 100%;
     }
 
     article,
