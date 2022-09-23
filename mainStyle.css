@@ -117,11 +117,13 @@ footer {
     margin-top: 3rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--borders);
+    line-height: 0.8em;
 }
 
 footer svg {
     width: 2.2em;
     padding: 0.2em;
+    margin-bottom: 0.5em;
     display: inline-block;
 }
 
