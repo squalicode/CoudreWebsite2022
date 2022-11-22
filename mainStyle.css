@@ -145,22 +145,23 @@ h1 {
 
 h3 {
     line-height: 1.5;
+    padding: 1em 0;
 }
 
-h3,
 article h2 {
     margin: 0.2rem 0;
 }
 
 h2 {
-    margin: 1.2rem 0;
+    margin: 1.5rem 0;
     font-family: serif;
     font-size: 2.5em;
     line-height: 1.2;
 }
 
 p,
-main ul {
+main ul,
+main ol {
     margin-bottom: 1.8em;
 }
 
@@ -175,6 +176,17 @@ ul {
 
 ul p {
     margin-bottom: 1.2em;
+}
+
+ol {
+    list-style-position: inside;
+}
+
+var {
+    color: var(--accent);
+    padding: 0 0.5em;
+    font-weight: bold;
+    font-family: serif;
 }
 
 svg {
@@ -282,6 +294,10 @@ time {
     padding: 0.2em 0.8em;
     display: inline-block;
     margin: 0.8em 0 1.8em 0;
+}
+
+.comingSoon {
+    opacity: 0.5;
 }
 
 .videoInsert {
