@@ -107,10 +107,6 @@ article picture img {
     margin: 0;
 }
 
-#awardList {
-    padding-top: 3em;
-}
-
 /************ footer ************/
 
 footer {
@@ -227,11 +223,6 @@ main a {
     color: var(--accent);
 }
 
-.jumpLink {
-    display: inline-block;
-    margin-bottom: 2.5em;
-}
-
 
 /*/////////////////////////////// INTERACTION ///////////////////////////////*/
 
@@ -293,7 +284,7 @@ time {
     outline: 1px solid var(--foreground);
     padding: 0.2em 0.8em;
     display: inline-block;
-    margin: 0.8em 0 1.8em 0;
+    margin: 0.8em 1em 1em 0;
 }
 
 .comingSoon {
