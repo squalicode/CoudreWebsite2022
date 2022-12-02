@@ -1,0 +1,55 @@
+---
+title: Ex-Designer Tableware
+layout: "base.njk"
+---
+
+
+<div class="flex">
+    <div>
+        <h2>Tableware for Martí Guixé's Ex-Designer</h2>
+        
+        <p>
+            <time datetime="2020">2020</time>
+        </p>
+
+        <p>
+            Martí Guixé's <a href="https://www.ex-designer.com/" target="_blank">Ex-Designer</a> is a bar where customers can have a beer with tapas while watching the printers build up the tiles, chairs and utensils that make up the space itself.
+        </p>
+
+        <p>
+            In a bar where the end goal is to have every object be 3D-printed, tableware posed a challenge. Although food-grade, the PLA plastic usually used in 3D-printing degrades, leaks and breaks easily after a few uses, as well as being difficult to wash. 3D-printed ceramic tableware, made of stoneware and glazed for a non-porous finish, allows for the robustness and ease of use of traditional ceramics while fitting into the Ex-Designer's concept.
+        </p>
+
+        <a class="btnLink" href="https://www.guixe.com/GUIXE/2020-02_3D_printed_ceramics.html" target="_blank">Guixé's tableware page</a>
+    </div>
+    
+    <div>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/ex-designer/tableware-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/ex-designer/tableware-1100.webp' | url }} 1100w,
+                    {{ '/imgs/projects/ex-designer/tableware-1600.webp' | url }} 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/ex-designer/tableware-1100.jpg' | url }}" alt="A series of geometrical 3D-printed bowls and glasses, in different earth tones ranging from chocolate brown to bone white.">
+        </picture>
+        <p class="caption">Photograph by <a href="https://www.ingaknoelke.com/index.html" target="_blank">Inga Knölke</a>, 2020.</p>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/ex-designer/ex-designer-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/ex-designer/ex-designer-1280.webp' | url }} 1280w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/ex-designer/ex-designer-1280.jpg' | url }}" alt="The softly lit interior of the Ex-Designer bar. The chairs and tiles covering the walls and bar are made out of 3D-printed plastic, in slighly different grey tones. The reliefs of the tiles create large scene illustrations and abstract motifs.">
+        </picture>
+        <p class="caption">Photograph by <a href="https://www.ingaknoelke.com/index.html target="_blank"">Inga Knölke</a>, 2020.</p>
+    </div>
+</div>

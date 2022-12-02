@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Coudre Studio | Printed L-Systems</title>
+
+        <link rel="stylesheet" href="/mainStyle.css">
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="/">coudre</a></h1>
+
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/about">About</a>
+                    </li>
+                    <li>
+                        <a href="/projects">Works</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            
+<div class="flex">
+    <div>
+        <h2>Printed L-Systems</h2>
+
+        <p>
+            <time datetime="2020">2021</time>
+        </p>
+
+        <h3>L-Systems and Turtle Graphics</h3>
+        
+        <p>
+            An <b><i>L-System</i></b> (or <i>Lindenmayer System</i>) is a mathematical and computational method that can generate <b>complex behavior from very simple rules</b>, usually used to simulate plants and fractal growth.
+        </p>
+        <p>
+            L-Systems are comprised of a collection of <b>symbols</b>, a subset of which is the initial "step" (<b>axiom</b>), and a series of <b>rules</b> that indicate how to recursively substitute these symbols for others once encountered.
+        </p>
+        <p>
+            For example, for an L-System comprised of symbols <var>A</var> and <var>B</var>, rules <var>A = BA</var> and <var>B = A</var>, and axiom <var>A</var>, the iterations produced would be as follows:
+        </p>
+        <ol>
+            <li><var>A</var></li>
+            <li><var>BA</var></li>
+            <li><var>ABA</var></li>
+            <li><var>BAABA</var></li>
+            <li><var>ABABAABA</var></li>
+            <li>... etc.</li>
+        </ol>
+        <p>
+            These symbols do not need to be letters. For instance, they can be mapped into actions. <b><i>Turtle Graphics</i></b> is the interpretation of an L-System's output into graphics, by way of assigning different movements or <b>commands</b> to symbols in the L-System, that a "Turtle" or imaginary robot will implement. These commands allow the Turtle to do things like rotate, jump, or walk while drawing a line in the space, producing <b>graphical results</b> (or, in our case, printer movements).
+            <br>
+            As a simplified example, <var>+</var> could stand for "turn counterclockwise", <var>-</var> for "turn clockwise", <var>F</var> for "walk forward while drawing a line (or extruding material)", <var>f</var> for "jump forward without drawing a line", and so on, including turning commands for the two other axis if the Turtle is to navigate in 3D space. Symbols/commands can even be functions with their own inputs, such as the distance to be walked or the degrees to turn if they are not default.
+        </p>
+        <p>
+            In this way, many iterations of shape growth can be encoded in the small amount of data needed to store the L-System's rules and axiom.
+        </p>
+        <p>
+            For a complete explanation of L-Systems and Turtle Graphics, including other common Turtle Graphics commands, we recommend consulting the freely available book <a href="http://algorithmicbotany.org/papers/#abop">The Algorithmic Beauty of Plants</a>, by Przemyslaw Prusinkiemicz and Aristid Lindenmayer.
+        </p>
+
+        <h3>Our exploration</h3>
+
+        <p>
+            L-Systems have been mostly used to generate 2D and 3D shapes that are not meant to be 3D printed.
+        </p>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/shrubs-800.webp 800w,
+                    /imgs/projects/printed-l-systems/shrubs-1100.webp 1100w,
+                    /imgs/projects/printed-l-systems/shrubs-1600.webp 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/shrubs-1100.jpg" alt="Screenshot showing 3 generations of digital shrub-like shapes, each appearing to have grown larger.">
+        </picture>
+        <p class="caption">
+            Different iteration stages of a 3D plant, encoded by an L-System and generated using <a href="https://morphocode.com/rabbit/">Rabbit</a>, a plugin for <a href="https://www.grasshopper3d.com/">Grasshopper</a>. These shapes are not self-sustaining.
+        </p>
+        <p>
+            We developed software (in the <a href="https://processing.org/">Processing programming language</a>) and a workflow that are able to generate different L-Systems which, when interpreted through Turtle Graphics, produce <b>self-sustaining shapes that do not collapse when 3D printed with clay</b>. Unlike the usual 3D printing methods, the Turtle Graphics' output is not a 3D model to be later translated into machine code; the <b>Turtle commands are directly translated into <a href="https://en.wikipedia.org/wiki/G-code">G-code commands</a></b>, which is the language that most CNC machines (such as 3D printers) are controlled with.
+        </p>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/processing-800.webp 800w,
+                    /imgs/projects/printed-l-systems/processing-1126.webp 1100w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/processing-1126.png" alt="Screenshot showing code.">
+        </picture>
+        <p class="caption">
+            The raw program in the Processing developing environment served as our sole interface. Although we generated a crude preview of the final Turtle path, we could design shapes without a graphical output.
+        </p>
+        <p>
+            The digital, weightless paths generated don't translate directly into the same shape upon being printed; they gain the additional depth of the <b>clay's extrusion volume and gravity</b>. We were constantly reminded that the Turtle paths don't codify for shapes, but for printer gestures interacting with the extruded material. We came up with ways in which to harness the expressiveness of these <b>gestures</b>, which one cannot see in the usual 3D printing processes, such as rapidly pulling upwards from the extruded material to "cut" it, forming spikes.
+        </p>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/piece-2-1600.webp 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/piece-2-1600.png" alt="3 porcelain pieces, all tubular, but with different degrees of coiling and spikiness in their texture.">
+        </picture>
+        <p>
+            Turtle Graphics do not need to be fed an L-System's output, they can be used alone to encode printer movement by hand. This method allows for quite <b>precise control over the printer</b> (as opposed to the generative quality of an L-System's results) without being as difficult to program as G-code. Turtle Graphics encourage an intuitive, more body-involved way of thinking about 3D printing: <b>encoding prints in terms of a dance sequence, instead of spatial coordinates</b>.
+        </p>
+    </div>
+    
+    <div>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/printing-800.webp 800w,
+                    /imgs/projects/printed-l-systems/printing-1100.webp 1100w,
+                    /imgs/projects/printed-l-systems/printing-1600.webp 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/printing-1100.jpg" alt="A 3D printer nozzle is in the process of extruding clay. The resulting tubular shape has a texture with multiple spike-like protrusions.">
+        </picture>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/piece-1-1600.webp 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/piece-1-1600.png" alt="A porcelain cylindrical piece with a texture resembling small, numerous nubs coming out in random places.">
+        </picture>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/texture-1-800.webp 800w,
+                    /imgs/projects/printed-l-systems/texture-1-1100.webp 1100w,
+                    /imgs/projects/printed-l-systems/texture-1-1600.webp 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/texture-1-1100.jpg" alt="Closeup of a piece's texture. The black clay layers are extruded with a mixture of spikes and looped curves.">
+        </picture>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/piece-3-1600.webp 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/piece-3-1600.png" alt="A porcelain piece with undulating vertical ridges.">
+        </picture>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/workshop-1600.webp 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/workshop-1600.png" alt="The workshop, full of 3D printers and open drawers, a picture of a kitten hung up on the wall, and Jude working.">
+        </picture>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    /imgs/projects/printed-l-systems/texture-2-1600.webp 1600w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="/imgs/projects/printed-l-systems/texture-2-1600.png" alt="Closeup of spikes in a piece.">
+        </picture>
+        <p class="caption">
+            This piece is encoded by the following L-System rules, with a turning degree <var>20°</var> for the Turtle:
+        </p>
+            <ol class="caption">
+                <li>
+                    Axiom = <var>P</var>
+                </li>
+                <li>n
+                    <var>P = -(32) S - S - S - S - S - S - S - S - S - S - S - S - S - S - S - S - S - S - U P</var>
+                </li>
+                <li>
+                    <var>U = ^(90) f(3.5) &(90) F(3)</var>
+                </li>
+                <li>
+                    <var>S = F [ -(41.6) F(6.6) ^(80) f(20) ]</var>
+                </li>
+            </ol>
+    </div>
+</div>
+        </main>
+
+        <footer>
+            <a href="https://gitlab.com/coudre" target="_blank">
+                <svg viewBox="0 0 24 24" width="2em" aria-labelledby="gitlabSVG" role="img">
+                    <title id="gitlabSVG">Gitlab</title>
+                    <path stroke="none" d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg></a>
+            
+            <a href="https://www.instagram.com/coudre.studio/" target="_blank">
+                <svg viewBox="0 0 1000 1000" width="2em" aria-labelledby="instagramSVG" role="img">
+                    <title id="instagramSVG">Instagram</title>
+                    <path d="M295.42,6c-53.2,2.51-89.53,11-121.29,23.48-32.87,12.81-60.73,30-88.45,57.82S40.89,143,28.17,175.92c-12.31,31.83-20.65,68.19-23,121.42S2.3,367.68,2.56,503.46,3.42,656.26,6,709.6c2.54,53.19,11,89.51,23.48,121.28,12.83,32.87,30,60.72,57.83,88.45S143,964.09,176,976.83c31.8,12.29,68.17,20.67,121.39,23s70.35,2.87,206.09,2.61,152.83-.86,206.16-3.39S799.1,988,830.88,975.58c32.87-12.86,60.74-30,88.45-57.84S964.1,862,976.81,829.06c12.32-31.8,20.69-68.17,23-121.35,2.33-53.37,2.88-70.41,2.62-206.17s-.87-152.78-3.4-206.1-11-89.53-23.47-121.32c-12.85-32.87-30-60.7-57.82-88.45S862,40.87,829.07,28.19c-31.82-12.31-68.17-20.7-121.39-23S637.33,2.3,501.54,2.56,348.75,3.4,295.42,6m5.84,903.88c-48.75-2.12-75.22-10.22-92.86-17-23.36-9-40-19.88-57.58-37.29s-28.38-34.11-37.5-57.42c-6.85-17.64-15.1-44.08-17.38-92.83-2.48-52.69-3-68.51-3.29-202s.22-149.29,2.53-202c2.08-48.71,10.23-75.21,17-92.84,9-23.39,19.84-40,37.29-57.57s34.1-28.39,57.43-37.51c17.62-6.88,44.06-15.06,92.79-17.38,52.73-2.5,68.53-3,202-3.29s149.31.21,202.06,2.53c48.71,2.12,75.22,10.19,92.83,17,23.37,9,40,19.81,57.57,37.29s28.4,34.07,37.52,57.45c6.89,17.57,15.07,44,17.37,92.76,2.51,52.73,3.08,68.54,3.32,202s-.23,149.31-2.54,202c-2.13,48.75-10.21,75.23-17,92.89-9,23.35-19.85,40-37.31,57.56s-34.09,28.38-57.43,37.5c-17.6,6.87-44.07,15.07-92.76,17.39-52.73,2.48-68.53,3-202.05,3.29s-149.27-.25-202-2.53m407.6-674.61a60,60,0,1,0,59.88-60.1,60,60,0,0,0-59.88,60.1M245.77,503c.28,141.8,115.44,256.49,257.21,256.22S759.52,643.8,759.25,502,643.79,245.48,502,245.76,245.5,361.22,245.77,503m90.06-.18a166.67,166.67,0,1,1,167,166.34,166.65,166.65,0,0,1-167-166.34" transform="translate(-2.5 -2.5)"/>
+                </svg>
+            </a>
+
+            <p><small>coudre.studio@gmail.com</small></p>
+            <p><small>Coudre 2022. This work is under a <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0 License</a>.</small></p>
+        </footer>
+    </body>
+</html>
