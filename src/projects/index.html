@@ -5,6 +5,42 @@ layout: "base.njk"
 
 
 <div class="projectsWrap">
+    <article class="comingSoon">
+        <h2>Recycled fibers</h2>
+        <picture class="comingSoon">
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/recycled-fibers/recycled-fibers-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/recycled-fibers/recycled-fibers-1100.webp' | url }} 1100w"
+                sizes="
+                    (min-width: 45rem) 30rem,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/recycled-fibers/recycled-fibers-800.jpg' | url }}" alt="A hand holding a small printed cylinder. Its material looks granulated.">
+        </picture>
+        <p>Coming soon!</p>
+    </article>
+
+    <article>
+        <h2><a href="{{ '/projects/robot-gesturality' | url }}">Robot gesturality</a></h2>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/robot-gesturality/robot-gesturality-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/robot-gesturality/robot-gesturality-1100.webp' | url }} 1100w"
+                sizes="
+                    (min-width: 45rem) 30rem,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/robot-gesturality/robot-gesturality-800.png' | url }}" alt="A bright yellow, industrial robotic arm with a metal arc tool attached to its end.">
+        </picture>
+
+        <time datetime="2022">2022</time>
+        <p>Modifying traditionally made ceramic pieces with Stäubli's TX-60 robotic arm.</p>
+    </article>
+
     <article>
         <h2><a href="{{ '/projects/printed-l-systems' | url }}">Printed L-Systems</a></h2>
         <picture>
@@ -22,7 +58,7 @@ layout: "base.njk"
             <img src="{{ '/imgs/project-thumbnails/printed-l-systems-thumb-900.jpg' | url }}" alt="A 3D printer nozzle is in the process of extruding clay. The resulting tubular shape has a texture with multiple spike-like protrusions.">
         </picture>
 
-        <time datetime="2021">2021</time>
+        <time datetime="2022">2022</time>
         <p>Research on generative printable shapes, under the Premis Barcelona grant.</p>
     </article>
 
@@ -48,27 +84,6 @@ layout: "base.njk"
     </article>
 
     <article>
-        <h2><a href="{{ '/projects/post-digital-vases-1' | url }}">Post-digital vases 1</a></h2>
-        <picture>
-            <source
-                type="image/webp"
-                srcset="
-                    {{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-600.webp' | url }} 600w,
-                    {{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-900.webp' | url }} 900w,
-                    {{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-1000.webp' | url }} 1000w,
-                    {{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-1900.webp' | url }} 1900w"
-                sizes="
-                    (min-width: 45rem) 30rem,
-                    88vw"
-            >
-            <img src="{{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-900.jpg' | url }}" alt="Two 3D-printed ceramic vases, each on its own pedestal, in front of a wall covered in framed oil paintings of flower vases.">
-        </picture>
-        
-        <time datetime="2019">2019</time>
-        <p>For the <i>On Flower Power</i> exhibition, Galleria Nazionale d'Arte Moderna e Contemporanea, Rome.</p>
-    </article>
-
-    <article>
         <h2><a href="{{ '/projects/reprint-ceramics' | url }}">Reprint Ceramics</a></h2>
         <picture>
             <source
@@ -90,27 +105,6 @@ layout: "base.njk"
     </article>
 
     <article>
-        <h2><a href="{{ '/projects/innovation-workshop' | url }}">Innovation workshop</a></h2>
-        <picture>
-            <source
-                type="image/webp"
-                srcset="
-                    {{ '/imgs/project-thumbnails/puig-thumb-600.webp' | url }} 600w,
-                    {{ '/imgs/project-thumbnails/puig-thumb-900.webp' | url }} 900w,
-                    {{ '/imgs/project-thumbnails/puig-thumb-1000.webp' | url }} 1000w,
-                    {{ '/imgs/project-thumbnails/puig-thumb-1900.webp' | url }} 1900w"
-                sizes="
-                    (min-width: 45rem) 30rem,
-                    88vw"
-            >
-            <img src="{{ '/imgs/project-thumbnails/puig-thumb-900.jpg' | url }}" alt="3D-printed perfume diffuser with an organic orange glass lid, and a leather cover by its side.">
-        </picture>
-        
-        <time datetime="2017">2017</time>
-        <p>To stimulate the perception of new materials, new processes and new technologies.</p>
-    </article>
-
-    <article>
         <h2><a href="{{ '/projects/exdesigner-tableware' | url }}">Tableware for Martí Guixé's Ex-Designer</a></h2>
         <picture>
             <source
@@ -129,5 +123,47 @@ layout: "base.njk"
         
         <time datetime="2020">2020</time>
         <p>3D-printed tableware for a 3D-printed bar.</p>
+    </article>
+
+    <article>
+        <h2><a href="{{ '/projects/post-digital-vases-1' | url }}">Post-digital vases 1</a></h2>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-600.webp' | url }} 600w,
+                    {{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-900.webp' | url }} 900w,
+                    {{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-1000.webp' | url }} 1000w,
+                    {{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-1900.webp' | url }} 1900w"
+                sizes="
+                    (min-width: 45rem) 30rem,
+                    88vw"
+            >
+            <img src="{{ '/imgs/project-thumbnails/post-digital-vases-1-thumb-900.jpg' | url }}" alt="Two 3D-printed ceramic vases, each on its own pedestal, in front of a wall covered in framed oil paintings of flower vases.">
+        </picture>
+        
+        <time datetime="2019">2019</time>
+        <p>For the <i>On Flower Power</i> exhibition, Galleria Nazionale d'Arte Moderna e Contemporanea, Rome.</p>
+    </article>
+
+    <article>
+        <h2><a href="{{ '/projects/innovation-workshop' | url }}">Innovation workshop</a></h2>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/project-thumbnails/puig-thumb-600.webp' | url }} 600w,
+                    {{ '/imgs/project-thumbnails/puig-thumb-900.webp' | url }} 900w,
+                    {{ '/imgs/project-thumbnails/puig-thumb-1000.webp' | url }} 1000w,
+                    {{ '/imgs/project-thumbnails/puig-thumb-1900.webp' | url }} 1900w"
+                sizes="
+                    (min-width: 45rem) 30rem,
+                    88vw"
+            >
+            <img src="{{ '/imgs/project-thumbnails/puig-thumb-900.jpg' | url }}" alt="3D-printed perfume diffuser with an organic orange glass lid, and a leather cover by its side.">
+        </picture>
+        
+        <time datetime="2017">2017</time>
+        <p>To stimulate the perception of new materials, new processes and new technologies.</p>
     </article>
 </div>

@@ -274,7 +274,8 @@ footer > a {
 
 /*//////////////////////////////// COMPONENTS ////////////////////////////////*/
 
-time {
+time,
+.comingSoon p {
     display: block;
     border-bottom: 1px solid var(--borders);
     margin-bottom: 1em;
@@ -284,11 +285,12 @@ time {
     outline: 1px solid var(--foreground);
     padding: 0.2em 0.8em;
     display: inline-block;
-    margin: 0.8em 1em 1em 0;
+    margin: 0.8em 1em 2em 0;
 }
 
 .comingSoon {
-    opacity: 0.5;
+    opacity: 0.75;
+    filter: saturate(0);
 }
 
 .videoInsert {

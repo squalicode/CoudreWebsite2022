@@ -1,0 +1,104 @@
+---
+title: Robot gesturality
+layout: "base.njk"
+---
+
+<div class="flex">
+    <div>
+        <h2>Robot gesturality</h2>
+        
+        <p>
+            <time datetime="2022">2022</time>
+        </p>
+
+        <p>
+            <i>Robot gesturality</i> was a project in collaboration with <a href="https://www.staubli.com/es/en/corp.html">Stäubli</a>. Coudre's objective was to research new ways in which industrial robots could be controlled by humans, and the <b>gestural possibilities</b> of a 6-axis robotic arm within the framework of <b>handicraft techniques</b>.
+        </p>
+
+        <p>
+            The <i>TX-60</i> is an <b>industrial robot model</b> that is normally controlled through <b>written code</b> in Stäubli's proprietary software. We first tried to find a way to <b>control this machine more intuïtively</b>, especially by people who don't know how to code such as the artists and designers we teach or collaborate with.
+        </p>
+
+        <p>
+            For this purpose, we developed an <b>open-source plugin</b> for <a href="https://www.blender.org/">Blender</a> (open-source 3D software) that translates 3D <b>animations</b> of a simulated robot into actual movements in the physical machine. This allowed anyone to use Blender's <b>graphical interface</b> instead of coding. We called this plugin <b>BlendeROS</b>.
+        </p>
+
+        <a class="btnLink" href="https://github.com/ilaro-org/blendeROS" target="_blank">BlendeROS plugin on Github</a>
+
+        <p>
+            In order for the robotic arm to be able to use <b>tools</b> on our pieces, we <b>designed and 3D-printed a series of parts</b> that hold these tools and are attached to the last joint of the robotic arm. The first of these tools can hold a handle, the second a glaze sprayer gun,  and the third a metal arc with a tensed metal thread (for cutting).
+        </p>
+
+        <p>
+            Lastly, we produced a series of <b>traditionally-thrown ceramic pieces</b> to be <b>modified</b> by the robot. The pieces have simple cylindrical shapes, to make the robot's interventions (cuts, engravings and brushwork) their focal point.
+        </p>
+
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/robot-gesturality/solid-tools-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/robot-gesturality/solid-tools-1100.webp' | url }} 1100w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/robot-gesturality/solid-tools-800.png' | url }}" alt="Three different tool 3D models.">
+        </picture>
+
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/robot-gesturality/robot-gesturality-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/robot-gesturality/robot-gesturality-1100.webp' | url }} 1100w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/robot-gesturality/robot-gesturality-800.png' | url }}" alt="A bright yellow, industrial robotic arm with a metal arc tool attached to its end.">
+        </picture>
+    </div>
+    
+
+    <div>
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/robot-gesturality/controller-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/robot-gesturality/controller-1100.webp' | url }} 1100w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/robot-gesturality/controller-800.png' | url }}" alt="The robot's controller in almost darkness, with glowing buttons. It has a screen showing technical information.">
+        </picture>
+
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/robot-gesturality/cut-piece-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/robot-gesturality/cut-piece-1100.webp' | url }} 1100w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/robot-gesturality/cut-piece-800.jpg' | url }}" alt="A white glazed matte ceramic piece. It is plain and cylindrical, except for a minimal triangle-shaped cut going through it, from its right side to the middle.">
+        </picture>
+
+        <picture>
+            <source
+                type="image/webp"
+                srcset="
+                    {{ '/imgs/projects/robot-gesturality/wheel-800.webp' | url }} 800w,
+                    {{ '/imgs/projects/robot-gesturality/wheel-1100.webp' | url }} 1100w"
+                sizes="
+                    (min-width: 45rem) 50vw,
+                    88vw"
+            >
+            <img src="{{ '/imgs/projects/robot-gesturality/wheel-800.jpg' | url }}" alt="Two hands shaping a clay cylinder in a spinning throwing wheel.">
+        </picture>
+    </div>
+</div>
