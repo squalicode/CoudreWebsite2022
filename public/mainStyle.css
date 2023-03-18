@@ -70,9 +70,9 @@ header > a {
     margin-top: 1em;
 }
 
-nav li {
-    display: inline;
-    margin-right: 2em;
+nav ul {
+    display: flex;
+    justify-content: space-between;
 }
 
 /************ articles (project gallery) ************/
@@ -330,7 +330,7 @@ time,
     }
 
     header li {
-        margin: 0 0 0 3em;
+        margin-left: 3em;
     }
 
     .flex > div:first-child {
